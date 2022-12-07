@@ -1,5 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.138.0/build/three.module.js';
-import { OrbitControls } from "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js";
+//import { OrbitControls } from "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js";
 
     console.log("Hello2");
 
@@ -24,7 +24,7 @@ import { OrbitControls } from "https://unpkg.com/three@0.138.0/examples/jsm/cont
     camera.position.z = 5*Math.cos(Math.PI/6);
     camera.position.y = 5*Math.sin(Math.PI/6);
     // Create an Orbital Camera Controls
-    const controls = new OrbitControls(camera, renderer.domElement);
+    //const controls = new OrbitControls(camera, renderer.domElement);
 
     const cube = new THREE.Mesh( new THREE.BoxGeometry(3,3,3), new THREE.MeshBasicMaterial({color: 0xff0000,}));
 
