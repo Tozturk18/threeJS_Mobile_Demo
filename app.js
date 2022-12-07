@@ -4,7 +4,7 @@ import { OrbitControls } from 'OrbitControls';
 // Create a THREE JS WebGL Renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true } );
 // Renderer Settings
-renderer.setSize( document.body.clientWidth*aspectRatio, document.body.clientHeight*aspectRatio ); // Renderer Aspect Ratio
+renderer.setSize( document.body.clientWidth, document.body.clientHeight ); // Renderer Aspect Ratio
 renderer.shadowMap.enabled = true; // Renderer Shadow options
 renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
 document.querySelector("main").appendChild( renderer.domElement ); // Instantiate the Renderer on the Webpage
