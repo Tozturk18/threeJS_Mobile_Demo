@@ -4,6 +4,12 @@ function newLoader() {
 
 window.onload = newLoader;
 
+window.onload( (event) => {
+
+    console.log("HELP!");
+
+} );
+
 console.log("Hello");
 
 console.log(document);
