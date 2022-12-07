@@ -3,6 +3,8 @@ import { OrbitControls } from 'OrbitControls';
 
 function loader() {
 
+    console.log("Hello2");
+
     // Create a THREE JS WebGL Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true } );
     console.log(renderer);
@@ -11,6 +13,8 @@ function loader() {
     renderer.shadowMap.enabled = true; // Renderer Shadow options
     renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
     document.querySelector("main").appendChild( renderer.domElement ); // Instantiate the Renderer on the Webpage
+
+    console.log("Hello3");
 
     // Create a THREE JS Scene
     const scene = new THREE.Scene();
