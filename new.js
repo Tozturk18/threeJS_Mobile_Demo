@@ -3,3 +3,5 @@ function newLoader() {
 }
 
 window.onload = newLoader;
+
+console.log("Hello");
