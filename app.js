@@ -1,8 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-function loader() {
-
     console.log("Hello2");
 
     // Create a THREE JS WebGL Renderer
@@ -45,7 +43,3 @@ function loader() {
   
     // Call the animate() function
     animate();
-
-}
-
-window.onload = loader;
