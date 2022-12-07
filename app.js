@@ -5,6 +5,7 @@ function loader() {
 
     // Create a THREE JS WebGL Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true } );
+    console.log(renderer);
     // Renderer Settings
     renderer.setSize( document.body.clientWidth, document.body.clientHeight ); // Renderer Aspect Ratio
     renderer.shadowMap.enabled = true; // Renderer Shadow options
