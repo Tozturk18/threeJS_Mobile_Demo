@@ -6,4 +6,4 @@ window.onload = newLoader;
 
 console.log("Hello");
 
-document.querySelector("main").innerHTML = "HELLOOO!"
+document.body.querySelector("main").innerHTML = "HELLOOO!";
