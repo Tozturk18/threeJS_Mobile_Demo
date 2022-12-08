@@ -149,7 +149,7 @@ class DomMesh extends Mesh {
 
         window.addEventListener( 'touchstart', (event) => {
 
-            //event.preventDefault();
+            event.preventDefault();
 
             // calculate pointer position in normalized device coordinates
             // (-1 to +1) for both components
@@ -168,7 +168,29 @@ class DomMesh extends Mesh {
                 func();
             }
 
-        });
+        } );
+
+        window.addEventListener( 'click', (event) => {
+
+            event.preventDefault();
+
+            // calculate pointer position in normalized device coordinates
+            // (-1 to +1) for both components
+            const pointer = new Vector2( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+            
+    
+            // update the picking ray with the camera and pointer position
+            raycaster.setFromCamera( pointer, camera );
+    
+            // calculate objects intersecting the picking ray
+            var selected = raycaster.intersectObject( target )[0] || [];
+
+            // Check if the object under the mouse is this DomMesh object
+            if (selected.object == target) {
+                func();
+            }
+
+        } );
     }
 
     /* Link(func) Function
