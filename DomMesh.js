@@ -147,17 +147,21 @@ class DomMesh extends Mesh {
         const raycaster = this._raycaster;
         var target = this;
 
-        window.addEventListener( 'click', (event) => {
+        window.addEventListener( 'touchstart', (event) => {
+
+            //event.preventDefault();
 
             // calculate pointer position in normalized device coordinates
             // (-1 to +1) for both components
-            const pointer = new Vector2( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+            //const pointer = new Vector2( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+            const pointer = new Vector2( ( event.touches[0].clientX / window.innerWidth ) * 2 - 1, - ( event.touches[0].clientY / window.innerHeight ) * 2 + 1 );
+            
     
             // update the picking ray with the camera and pointer position
             raycaster.setFromCamera( pointer, camera );
     
             // calculate objects intersecting the picking ray
-            var selected = raycaster.intersectObject( target,true )[0] || [];
+            var selected = raycaster.intersectObject( target )[0] || [];
 
             // Check if the object under the mouse is this DomMesh object
             if (selected.object == target) {
