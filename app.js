@@ -1,7 +1,6 @@
 import * as THREE from 'https://unpkg.com/three@0.138.0/build/three.module.js';
 import { OrbitControls } from "./orbitControls.js";
-
-    console.log("Hello2");
+import { DomMesh } from './DomMesh.js';
 
     // Create a THREE JS WebGL Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true } );
@@ -11,8 +10,6 @@ import { OrbitControls } from "./orbitControls.js";
     renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
     document.querySelector("main").appendChild( renderer.domElement ); // Instantiate the Renderer on the Webpage
     
-
-    console.log("Hello3");
 
     // Create a THREE JS Scene
     const scene = new THREE.Scene();
@@ -26,9 +23,13 @@ import { OrbitControls } from "./orbitControls.js";
     // Create an Orbital Camera Controls
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    const cube = new THREE.Mesh( new THREE.BoxGeometry(3,3,3), new THREE.MeshBasicMaterial({color: 0xff0000,}));
+    const cube = new DomMesh( new THREE.BoxGeometry(3,3,3), new THREE.MeshBasicMaterial({color: 0xff0000,}), camera);
 
     scene.add(cube);
+
+    cube.MouseDown( () => {
+        cube.material.color = new THREE.Color( Math.random() * 0xffffff );
+    })
 
     function animate() {
         requestAnimationFrame( animate );
