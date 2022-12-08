@@ -153,9 +153,7 @@ class DomMesh extends Mesh {
 
             // calculate pointer position in normalized device coordinates
             // (-1 to +1) for both components
-            //const pointer = new Vector2( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
             const pointer = new Vector2( ( event.touches[0].clientX / window.innerWidth ) * 2 - 1, - ( event.touches[0].clientY / window.innerHeight ) * 2 + 1 );
-            
     
             // update the picking ray with the camera and pointer position
             raycaster.setFromCamera( pointer, camera );
