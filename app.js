@@ -23,7 +23,7 @@ import { DomMesh } from './DomMesh.js';
     // Create an Orbital Camera Controls
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    const cube = new DomMesh( new THREE.BoxGeometry(3,3,3), new THREE.MeshBasicMaterial({color: 0xff0000,}), camera);
+    const cube = new DomMesh( new THREE.BoxGeometry(3,3,3), new THREE.MeshBasicMaterial({color: 0xff0000, side:THREE.DoubleSide}), camera);
 
     scene.add(cube);
 

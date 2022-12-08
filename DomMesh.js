@@ -18,7 +18,8 @@ import {
     Mesh,       // 3D Object
     Sprite,     // Sprite Object
     Raycaster,  // Raycaster
-    Vector2     // Vector2
+    Vector2,     // Vector2
+    Box3
 } from 'https://unpkg.com/three@0.138.0/build/three.module.js';
 
 /* --- End of Imports --- */
@@ -156,7 +157,7 @@ class DomMesh extends Mesh {
             raycaster.setFromCamera( pointer, camera );
     
             // calculate objects intersecting the picking ray
-            var selected = raycaster.intersectObject( target )[0] || [];
+            var selected = raycaster.intersectObject( target,true )[0] || [];
 
             // Check if the object under the mouse is this DomMesh object
             if (selected.object == target) {
